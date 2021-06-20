@@ -1,0 +1,19 @@
+spring:
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: 1577975140@qq.com
+    password: xxx
+#    test-connection: false
+    properties:
+      #      "[mail.debug]": ${"debug".equals(${logging.level.root})} # 在代码中配置了
+      mail.smtp.auth: true
+      "[mail.smtp.ssl.enable]": true
+      "[mail.smtp.socketFactory.fallback]": false
+      "[mail.smtp.socketFactory.port]": ${spring.mail.port}
+      "[mail.smtp.socketFactory.class]": javax.net.ssl.SSLSocketFactory
+      "[mail.smtp.timeout]": 25000
+alarm:
+  ding-talk:
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=xxx
+    secret: xxx

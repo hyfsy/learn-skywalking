@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+    <!--
+        Log4j-2.9 及更高版本在类路径上需要disruptor-3.3.4.jar 或更高版本。
+        在 Log4j-2.9 之前，需要disruptor-3.0.0.jar 或更高版本。
+        系统属性设置log4j2.contextSelector为org.apache.logging.log4j.core.async.AsyncLoggerContextSelector
+    -->
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <!-- %traceId: traceId -->
+            <!-- %sw_ctx: traceContext -->
+            <PatternLayout pattern="%d [%traceId] %-5p %c{1}:%L - %m%n"/>
+        </Console>
+
+        <!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
+        <RandomAccessFile name="RandomAccessFile" fileName="async.log" immediateFlush="false" append="false">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] [%traceId] %m %ex%n</Pattern>
+            </PatternLayout>
+        </RandomAccessFile>
+
+        <Async name="Async">
+            <AppenderRef ref="Console"/>
+        </Async>
+
+        <!-- gRPC报告器 -->
+        <!-- plugin.toolkit.log.transmit_formatted=true 指定要格式化消息，否则参数变为tag传输 -->
+        <GRPCLogClientAppender name="grpc-log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </GRPCLogClientAppender>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <AsyncRoot level="INFO">
+            <AppenderRef ref="RandomAccessFile"/>
+        </AsyncRoot>
+    </Loggers>
+</Configuration>
