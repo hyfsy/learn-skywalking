@@ -24,6 +24,7 @@ public class LearnSkyWalkingApplication {
     private PluginComponent pluginComponent;
 
     public static void main(String[] args) {
+        // SW_OAL_ENGINE_DEBUG
         SpringApplication.run(LearnSkyWalkingApplication.class, args);
     }
 
