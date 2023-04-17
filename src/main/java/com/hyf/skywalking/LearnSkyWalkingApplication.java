@@ -10,11 +10,12 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 
 /**
- * 源码调试: -javaagent:E:\study\idea4\source-springcloud\component\skywalking\skywalking-agent\skywalking-agent.jar
+ * -Dskywalking.agent.service_name=test-application -Dskywalking.agent.is_open_debugging_class=true -Dskywalking.agent.is_cache_enhanced_class=true -Dskywalking.agent.class_cache_mode=FILE
+ * 源码调试: -javaagent:E:\study\code\idea4\source-springcloud\component\skywalking\skywalking-agent\skywalking-agent.jar
  * <p>
  * 服务器:
- * -javaagent:E:\study\idea4\source-springcloud\cloud-resources\skywalking\apache-skywalking-apm-8.5.0\agent\skywalking-agent.jar -Dskywalking.agent.service_name=Research-Source
- * -javaagent:E:\study\idea4\source-springcloud\cloud-resources\skywalking\apache-skywalking-apm-es7-8.5.0\agent\skywalking-agent.jar -Dskywalking.agent.service_name=Research-Source
+ * -javaagent:E:\study\env\component\cloud-resources\apache-skywalking-apm-8.5.0\agent\skywalking-agent.jar -Dskywalking.agent.service_name=Research-Source
+ * -javaagent:E:\study\env\component\cloud-resources\apache-skywalking-apm-es7-8.5.0\agent\skywalking-agent.jar -Dskywalking.agent.service_name=Research-Source
  */
 @RestController
 @SpringBootApplication
