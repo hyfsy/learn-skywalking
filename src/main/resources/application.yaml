@@ -3,7 +3,7 @@ spring:
     host: smtp.qq.com
     port: 465
     username: 1577975140@qq.com
-    password: xxx
+    password: hsfdpduwhzcnfjfe
 #    test-connection: false
     properties:
       #      "[mail.debug]": ${"debug".equals(${logging.level.root})} # 在代码中配置了
@@ -15,5 +15,5 @@ spring:
       "[mail.smtp.timeout]": 25000
 alarm:
   ding-talk:
-    webhook: https://oapi.dingtalk.com/robot/send?access_token=xxx
-    secret: xxx
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=06f31e2568cf65fcb700c838c6bd71e5efebc6edffb412f7cbd0788661353f64
+    secret: SEC1735dbc5bb742da71b0a3a1867103dd57a1d06ea9e9e30d646561f61d1c23d5e

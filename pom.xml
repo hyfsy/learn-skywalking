@@ -18,6 +18,11 @@
         <skywalking.version>8.5.0</skywalking.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>io.github.hyfsy</groupId>
+            <artifactId>hot-refresh-server-all</artifactId>
+            <version>1.2.5</version>
+        </dependency>
         <!-- 跨线程追踪工具 -->
         <dependency>
             <groupId>org.apache.skywalking</groupId>
